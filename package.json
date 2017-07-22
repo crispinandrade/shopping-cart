@@ -13,6 +13,7 @@
     "express-compile-sass": "^3.0.4",
     "express-handlebars": "^3.0.0",
     "hbs": "~4.0.1",
+    "mongoose": "^4.11.3",
     "morgan": "~1.8.1",
     "node-sass": "^4.5.3",
     "node-sass-middleware": "^0.11.0",
