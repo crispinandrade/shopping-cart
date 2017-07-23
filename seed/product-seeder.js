@@ -2,8 +2,10 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
+// Database connect
 mongoose.connect('localhost:27017/shopping')
 
+// Fill products array with items
 var products = [
    new Product({
       imagePath: 'images/Ironman.jpg',
@@ -67,19 +69,23 @@ var products = [
    }),
 ];
 
+// Counter for when all products are finished being looped through
 var done = 0;
 
 // Loop through products
 for (var i = 0; i < products.length; i++) {
    // Save model to database
    products[i].save(function(err, result) {
+      // Increment done 
       done++;
+      // Must check if all products are saved before disconnecting from mongoose
       if (done === products.length) {
          exit();
       }
    });
 }
 
+// Disconnect database
 function exit() {
    mongoose.disconnect();
 }

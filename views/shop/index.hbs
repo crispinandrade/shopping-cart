@@ -1,8 +1,9 @@
 {{!--Loop through products--}}
 {{# each products }}
   <div class="row">
-    {{!--this is current iteration--}}
+    {{!--this is current product from each iteration--}}
     {{# each this}}
+    {{!--Can use properties from the schema and output data within the 'each this' loop--}}
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img src="{{ this.imagePath }}" alt="{{ this.title }}" class="img-responsive">
